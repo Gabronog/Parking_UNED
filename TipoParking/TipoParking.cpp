@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include "TipoParking.h"
 
-void TipoParking::ConfigurarParking(int numeroTotalDePlantas,int plazasMaxPorPlanta){
+// Suponemos que la comprobacion de numeroTotalDePlantas<5 se hace en el main()
+void TipoParking::ConfigurarParking(int numeroTotalDePlantas,int plazasMaxPorParking){
 
     NumeroDePlantas = numeroTotalDePlantas;
-    PlazasMaximas = plazasMaxPorPlanta;
+    PlazasMaximas = plazasMaxPorParking;
 
     /** Inicializo a 0 las plantas pues no hay plazas ocupadas **/
     for(int i=0;i<NumeroPlantas;i++){
@@ -12,8 +13,12 @@ void TipoParking::ConfigurarParking(int numeroTotalDePlantas,int plazasMaxPorPla
     }    
 }
 
-void TipoParking::EntraCoche(int numeroDePlanta){
+/** Tanto para la salida como para la entrada de vehiculos
+ *  Suponemos que la comprobacion de que la planta 
+ * existe dentro del parking se hace en el main()
+ *  **/
 
+void TipoParking::EntraCoche(int numeroDePlanta){
     if(Plazas[numeroDePlanta] == PlazasMaximas){
         printf("Error => La planta esta llena");
     }
@@ -22,21 +27,17 @@ void TipoParking::EntraCoche(int numeroDePlanta){
     }
 }
 
-void TipoParking::SalidaCoche(int numeroDePlanta)
-{
-
-    if (Plantas[numeroDePlanta] == 0)
-    {
+void TipoParking::SalidaCoche(int numeroDePlanta){
+    if (Plantas[numeroDePlanta] == 0){
         printf("Error => La planta esta vacia");
     }
-    else
-    {
+    else{
         Plantas[numeroDePlanta]--;
     }
 }
 
 void TipoParking::ImprimirParking(int numeroDePlanta){
-
+//Otra vez asumimos que el control de que la planta existe dentro del parking se hace en el main()
     int TotalLibres = 0;
     int LibresEnLaPlanta;
     for(int i=0;i<NumeroDePlantas;i++){
