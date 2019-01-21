@@ -1,6 +1,7 @@
 /** Estructura de datos para el ejercicio
  *  Febrero 2017 Modelo B
  *  Desarrollo **/
+#pragma once
 
 const int LECTURASMAX = 10;
 typedef enum TipoMedicion{Luz,Agua,Gas};
@@ -18,4 +19,4 @@ typedef struct TipoContador{
     void NuevaLectura(int TipoMedicion, int medicion);
     void ListarLecturas();
     void Consumos();
-}
+};
