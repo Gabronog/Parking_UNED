@@ -56,3 +56,14 @@ TipoBlog::ComprobarHilo(TipoHilo nombreHilo){
     // El hilo no existe en nuestros registros
     return false;
 }
+
+TipoBlog::MostrarHilo(TipoHilo hilo){
+    for(int i=0; i<=ultimo;i++){
+        if(ComprobarHilo(hilo)){
+            printf("------------------------------------------------------------------");
+            printf("\n\t\tHilo: %s | Autor: %s \n",mensaje[i].hilo,mensaje[i].autor);
+            printf("\t\t Mensaje: %s \n",mensaje[i].texto);
+        }
+    }
+    system("pause");
+}
