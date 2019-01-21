@@ -13,11 +13,8 @@ typedef struct TipoLectura{
 
 typedef struct TipoContador{
     TipoLectura Lecturas[3][LECTURASMAX];
-    bool LuzCompleto;
-    bool AguaCompleto;
-    bool GasCompleto;
     int ultimo;
-    
+
     void NuevaLectura(int TipoMedicion, int medicion);
     void ListarLecturas();
     void Consumos();

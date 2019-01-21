@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "TipoContador.h"
 
-TipoContador::NuevaLectura(int TipoDeMedicion, int medicion){
+TipoContador::NuevaLectura(TipoMedicion TipoDeMedicion, int medicion){
     if (ultimo != LECTURASMAX-1){
         for (int i = 0; i < LECTURASMAX; i++)
         {
@@ -21,6 +21,17 @@ TipoContador::NuevaLectura(int TipoDeMedicion, int medicion){
     }
 }
 
-TipoContador::ListarLecturas(){
-    
+TipoContador::ListarLecturas(TipoMedicion TipoDeMedicion){
+    for(int i = 0; i<=ultimo;i++){
+        printf("Numero de medicion || Medicion  ||");
+        printf("       %d          ||     %d    ||",i,Lecturas[TipoDeMedicion][i].medicion);
+    }
+}
+
+TipoContador::Consumos(TipoMedicion TipoDeMedicion){
+    int consumo = 0;
+    for (int i = 0; i <= ultimo; i++){
+        consumo = consumo + Lecturas[TipoDeMedicion][i];
+    }
+    printf("El consumo de las ultimas 10 mediciones ha sido %d",consumo);
 }
