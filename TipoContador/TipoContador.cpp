@@ -23,8 +23,8 @@ TipoContador::NuevaLectura(TipoMedicion TipoDeMedicion, int medicion){
 
 TipoContador::ListarLecturas(TipoMedicion TipoDeMedicion){
     for(int i = 0; i<=ultimo;i++){
-        printf("Numero de medicion || Medicion  ||");
-        printf("       %d          ||     %d    ||",i,Lecturas[TipoDeMedicion][i].medicion);
+        printf("Numero de medicion || Medicion  ||\n");
+        printf("       %d          ||     %d    ||\n",i,Lecturas[TipoDeMedicion][i].medicion);
     }
 }
 
@@ -33,5 +33,5 @@ TipoContador::Consumos(TipoMedicion TipoDeMedicion){
     for (int i = 0; i <= ultimo; i++){
         consumo = consumo + Lecturas[TipoDeMedicion][i];
     }
-    printf("El consumo de las ultimas 10 mediciones ha sido %d",consumo);
+    printf("El consumo de las ultimas 10 mediciones ha sido %d \n",consumo);
 }
